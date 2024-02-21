@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+
+<!-- login area start -->
+<div class="login-register-area pt-100px pb-100px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-12 ml-auto mr-auto">
+                <div class="login-register-wrapper">
+                    <div class="login-register-tab-list nav">
+                       
+                        <a data-bs-toggle="tab" href="#lg2">
+                            <h4>register</h4>
+                        </a>
+                    </div>
+                    <div id="lg2" class="tab-pane">
+                        <div class="login-form-container">
+                            <div class="login-register-form">
+                                <form action="{% url 'registration'%}" method="post">
+                                    {% csrf_token %}
+                                    <input type="text" name="username" placeholder="Username" />
+                                    <input type="text" name="first_name" placeholder="First name" />
+                                    <input type="text" name="last_name" placeholder="Last name" />
+
+                                    <input name="email" placeholder="Email" type="email" />
+                                    <input type="password" name="pass1" placeholder="Password" />
+                                    <input type="password" name="pass2" placeholder="Confirm Password" />
+                                    <div class="button-box">
+                                        <button type="submit"><span>Register</span></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}
